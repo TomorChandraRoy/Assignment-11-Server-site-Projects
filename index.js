@@ -52,6 +52,7 @@ async function run() {
       const result = await addJobsCollcetion.find(filter).toArray();
       res.send(result);
     })
+    ///get method
     app.get("/jonByEmail", async (req, res) => {
       const email = req.query.email;
       console.log(email);
@@ -59,13 +60,8 @@ async function run() {
       const result = await addJobsCollcetion.find(filter).toArray();
       res.send(result);
     })
-    // server a catogray load
-    // app.get("/catograyes",async(req,res)=>{
-    //   const cursor = addJobsCollcetion.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // })
-
+   
+  ///get method
     app.get('/updateJob', async (req, res) => {
       const result = await addJobsCollcetion.find().toArray();
       res.send(result);
@@ -89,13 +85,7 @@ async function run() {
       res.send(result);
     })
 
-     // server a catogray load
-    // app.get("/catograyes",async(req,res)=>{
-    //   const cursor = addJobsCollcetion.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // })
-    
+    ///get method id
     app.get('/singleData/:id', async (req, res) => {
       const id = req.params.id
       const quary = { _id: new ObjectId(id) }
@@ -118,12 +108,7 @@ async function run() {
       res.send(result);
     })
 
-     // server a catogray load
-    // app.get("/catograyes",async(req,res)=>{
-    //   const cursor = addJobsCollcetion.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // })
+    
 
     //delete method
     app.delete('/addjobs/:id', async (req, res) => {
@@ -141,12 +126,7 @@ async function run() {
       res.send(result);
     });
 
-     // server a catogray load
-    // app.get("/catograyes",async(req,res)=>{
-    //   const cursor = addJobsCollcetion.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // })
+   
 
     // BID-DATA aer all data load server a 
     app.get("/bid-data", async (req, res) => {
@@ -168,13 +148,8 @@ async function run() {
       res.send(result);
     })
 
-     // server a catogray load
-    // app.get("/catograyes",async(req,res)=>{
-    //   const cursor = addJobsCollcetion.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // })
-
+    
+    //get method id
     app.get('/bid-data/:id', async (req, res) => {
       const id = req.params.id
       const quary = { _id: new ObjectId(id) }
@@ -189,13 +164,8 @@ async function run() {
     res.send(result)
    })
 
-    // server a catogray load
-    // app.get("/catograyes",async(req,res)=>{
-    //   const cursor = addJobsCollcetion.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // })
-
+   
+   ///patch method
    app.patch('/updateStatus/:id', async(req,res)=>{
     const id = req.params.id;
     const {status} = req.body;
@@ -209,15 +179,10 @@ async function run() {
     res.send(result)
    })
 
-    // server a catogray load
-    // app.get("/catograyes",async(req,res)=>{
-    //   const cursor = addJobsCollcetion.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // })
+  
 
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
+    // await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
