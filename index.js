@@ -52,7 +52,6 @@ async function run() {
       const result = await addJobsCollcetion.find(filter).toArray();
       res.send(result);
     })
-    ///get method
     app.get("/jonByEmail", async (req, res) => {
       const email = req.query.email;
       console.log(email);
