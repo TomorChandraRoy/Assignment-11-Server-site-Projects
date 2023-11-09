@@ -75,12 +75,11 @@ async function run() {
       const result = await addJobsCollcetion.find().toArray();
       res.send(result);
     })
-    //get server site
+    
     app.get('/singleData', async (req, res) => {
       const result = await addJobsCollcetion.find().toArray();
       res.send(result);
     })
-
     ///get method id
     app.get('/singleData/:id', async (req, res) => {
       const id = req.params.id
