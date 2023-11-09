@@ -115,9 +115,6 @@ async function run() {
       const result = await bidCollcetion.insertOne(addBid);
       res.send(result);
     });
-
-   
-
     // BID-DATA aer all data load server a 
     app.get("/bid-data", async (req, res) => {
       // console.log(req.query.userEmail);
@@ -138,7 +135,6 @@ async function run() {
       res.send(result);
     })
 
-    
     //get method id
     app.get('/bid-data/:id', async (req, res) => {
       const id = req.params.id
@@ -154,7 +150,6 @@ async function run() {
     res.send(result)
    })
 
-   
    ///patch method
    app.patch('/updateStatus/:id', async(req,res)=>{
     const id = req.params.id;
@@ -168,8 +163,6 @@ async function run() {
     const result = await bidCollcetion.updateOne(filter, update)
     res.send(result)
    })
-
-  
 
     // Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
