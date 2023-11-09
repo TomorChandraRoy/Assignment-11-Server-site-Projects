@@ -100,9 +100,6 @@ async function run() {
       const result = await addJobsCollcetion.updateOne(id, uodateData, option)
       res.send(result);
     })
-
-    
-
     //delete method
     app.delete('/addjobs/:id', async (req, res) => {
       const id = req.params.id;
