@@ -59,13 +59,10 @@ async function run() {
       const result = await addJobsCollcetion.find(filter).toArray();
       res.send(result);
     })
-   
-  ///get method
     app.get('/updateJob', async (req, res) => {
       const result = await addJobsCollcetion.find().toArray();
       res.send(result);
     })
-
     //update id load server
     app.get("/updateJob/:id", async (req, res) => {
       const update = await addJobsCollcetion.findOne({
