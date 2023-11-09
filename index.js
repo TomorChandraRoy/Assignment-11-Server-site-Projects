@@ -107,7 +107,6 @@ async function run() {
       const result = await addJobsCollcetion.deleteOne(quary)
       res.send(result)
     })
-
     // BID-DATA FORM aer data load method
     app.post('/bid-data', async (req, res) => {
       const addBid = req.body;
@@ -122,7 +121,6 @@ async function run() {
       if(req.query?.userEmail){
         quary={userEmail: req.query.userEmail}
       }
-  
       const cursor = bidCollcetion.find(quary);
       const result = await cursor.toArray();
       res.send(result);
@@ -150,7 +148,6 @@ async function run() {
     res.send(result)
    })
 
-   ///patch method
    app.patch('/updateStatus/:id', async(req,res)=>{
     const id = req.params.id;
     const {status} = req.body;
@@ -163,7 +160,6 @@ async function run() {
     const result = await bidCollcetion.updateOne(filter, update)
     res.send(result)
    })
-
 
     // Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
