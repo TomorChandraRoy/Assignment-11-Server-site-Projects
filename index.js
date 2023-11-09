@@ -108,7 +108,7 @@ async function run() {
       res.send(result)
     })
 
-    // BID-DATA FORM aer data load 
+    // BID-DATA FORM aer data load method
     app.post('/bid-data', async (req, res) => {
       const addBid = req.body;
       console.log('bid added', addBid);
@@ -164,6 +164,7 @@ async function run() {
     res.send(result)
    })
 
+
     // Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
@@ -178,7 +179,7 @@ run().catch(console.dir);
 app.get('/', (req, res) => {
   res.send('ServerSITE')
 })
-
+// app lesten     
 app.listen(port, () => {
   console.log(`Example app listening on port : ${port}`)
 })
