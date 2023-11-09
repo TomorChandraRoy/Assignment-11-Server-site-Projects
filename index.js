@@ -80,14 +80,12 @@ async function run() {
       const result = await addJobsCollcetion.find().toArray();
       res.send(result);
     })
-    ///get method id
     app.get('/singleData/:id', async (req, res) => {
       const id = req.params.id
       const quary = { _id: new ObjectId(id) }
       const result = await addJobsCollcetion.findOne(quary)
       res.send(result);
     })
-
     // DATA update method 
     app.patch("/updateJob/:id", async (req, res) => {
       const id = { _id: new ObjectId(req.params.id), }
